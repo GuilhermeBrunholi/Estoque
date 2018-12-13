@@ -22,3 +22,15 @@ C:\Users\Guilherme\Documents\Udemy\NetCore\Teste\Cadastro-De-Produtos\Dados\obj\
 C:\Users\Guilherme\Documents\Udemy\NetCore\Teste\Cadastro-De-Produtos\Dados\obj\Debug\netstandard2.0\Dados.csproj.CopyComplete
 C:\Users\Guilherme\Documents\Udemy\NetCore\Teste\Cadastro-De-Produtos\Dados\obj\Debug\netstandard2.0\Dados.dll
 C:\Users\Guilherme\Documents\Udemy\NetCore\Teste\Cadastro-De-Produtos\Dados\obj\Debug\netstandard2.0\Dados.pdb
+C:\Users\Guilherme\Desktop\Cadastro-De-Produtos\Dados\bin\Debug\netstandard2.0\Dados.deps.json
+C:\Users\Guilherme\Desktop\Cadastro-De-Produtos\Dados\bin\Debug\netstandard2.0\Dados.dll
+C:\Users\Guilherme\Desktop\Cadastro-De-Produtos\Dados\bin\Debug\netstandard2.0\Dados.pdb
+C:\Users\Guilherme\Desktop\Cadastro-De-Produtos\Dados\bin\Debug\netstandard2.0\Dominio.dll
+C:\Users\Guilherme\Desktop\Cadastro-De-Produtos\Dados\bin\Debug\netstandard2.0\Dominio.pdb
+C:\Users\Guilherme\Desktop\Cadastro-De-Produtos\Dados\obj\Debug\netstandard2.0\Dados.csprojAssemblyReference.cache
+C:\Users\Guilherme\Desktop\Cadastro-De-Produtos\Dados\obj\Debug\netstandard2.0\Dados.csproj.CoreCompileInputs.cache
+C:\Users\Guilherme\Desktop\Cadastro-De-Produtos\Dados\obj\Debug\netstandard2.0\Dados.AssemblyInfoInputs.cache
+C:\Users\Guilherme\Desktop\Cadastro-De-Produtos\Dados\obj\Debug\netstandard2.0\Dados.AssemblyInfo.cs
+C:\Users\Guilherme\Desktop\Cadastro-De-Produtos\Dados\obj\Debug\netstandard2.0\Dados.csproj.CopyComplete
+C:\Users\Guilherme\Desktop\Cadastro-De-Produtos\Dados\obj\Debug\netstandard2.0\Dados.dll
+C:\Users\Guilherme\Desktop\Cadastro-De-Produtos\Dados\obj\Debug\netstandard2.0\Dados.pdb

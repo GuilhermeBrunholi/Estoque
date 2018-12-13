@@ -11543,11 +11543,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Guilherme\\Documents\\Udemy\\NetCore\\Teste\\Cadastro-De-Produtos\\Mvc\\Mvc.csproj",
+      "projectUniqueName": "C:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Mvc\\Mvc.csproj",
       "projectName": "Mvc",
-      "projectPath": "C:\\Users\\Guilherme\\Documents\\Udemy\\NetCore\\Teste\\Cadastro-De-Produtos\\Mvc\\Mvc.csproj",
+      "projectPath": "C:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Mvc\\Mvc.csproj",
       "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Guilherme\\Documents\\Udemy\\NetCore\\Teste\\Cadastro-De-Produtos\\Mvc\\obj\\",
+      "outputPath": "C:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Mvc\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -11566,11 +11566,11 @@
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "C:\\Users\\Guilherme\\Documents\\Udemy\\NetCore\\Teste\\Cadastro-De-Produtos\\Dados\\Dados.csproj": {
-              "projectPath": "C:\\Users\\Guilherme\\Documents\\Udemy\\NetCore\\Teste\\Cadastro-De-Produtos\\Dados\\Dados.csproj"
+            "C:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Dados\\Dados.csproj": {
+              "projectPath": "C:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Dados\\Dados.csproj"
             },
-            "C:\\Users\\Guilherme\\Documents\\Udemy\\NetCore\\Teste\\Cadastro-De-Produtos\\Dominio\\Dominio.csproj": {
-              "projectPath": "C:\\Users\\Guilherme\\Documents\\Udemy\\NetCore\\Teste\\Cadastro-De-Produtos\\Dominio\\Dominio.csproj"
+            "C:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Dominio\\Dominio.csproj": {
+              "projectPath": "C:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Dominio\\Dominio.csproj"
             }
           }
         }

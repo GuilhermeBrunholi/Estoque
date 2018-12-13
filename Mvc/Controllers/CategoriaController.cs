@@ -21,23 +21,29 @@ namespace Mvc.Controllers
             return View(categorias);
         }
 
-        public async Task<IActionResult> Deletar(int id)
-        {
+        public IActionResult Deletar(int id)
+        {   
             var categoria = _contexto.Categorias.First(c => c.Id == id);
-            _contexto.Categorias.Remove(categoria);
+            return PartialView("Deletar", categoria);
+        }
+
+        public async Task<IActionResult> Excluir(Categoria modelo)
+        {
+            
+            _contexto.Categorias.Remove(modelo);
             await _contexto.SaveChangesAsync();
             return RedirectToAction("Index");
         }
         public IActionResult Editar(int id)
         {
             var categoria = _contexto.Categorias.First(c => c.Id == id);
-            return View("Salvar", categoria);
+            return PartialView("Editar", categoria);
         }
 
         [HttpGet]
         public IActionResult Salvar()
         {
-            return View();
+            return PartialView();
         }
 
         [HttpPost]
