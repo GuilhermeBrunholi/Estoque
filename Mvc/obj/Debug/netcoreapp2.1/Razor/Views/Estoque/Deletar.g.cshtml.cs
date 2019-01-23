@@ -61,12 +61,12 @@ using Mvc.Models;
             WriteLiteral("\r\n\r\n");
             EndContext();
             BeginContext(38, 823, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a74585f9be04654b4357caa0026b296", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "41d4c382682a426b80721773921673e8", async() => {
                 BeginContext(128, 242, true);
                 WriteLiteral("\r\n\r\n    <div class=\"modal-header\">\r\n        <button type=\"button\" class=\"close\" data-dismiss=\"modal\">&times;</button>\r\n        <h3 class=\"modal-title\" id=\"exampleModalLabel\">Deletar Estoque</h3>\r\n    </div>\r\n\r\n    <div class=\"topo\">\r\n        ");
                 EndContext();
                 BeginContext(370, 55, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "b5d52563bc094d0b9521000ef9c533d3", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("input", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagOnly, "45f4411d28ab4f9a8c9132de77964fac", async() => {
                 }
                 );
                 __Microsoft_AspNetCore_Mvc_TagHelpers_InputTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.TagHelpers.InputTagHelper>();

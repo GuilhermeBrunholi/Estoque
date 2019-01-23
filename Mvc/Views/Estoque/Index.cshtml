@@ -1,6 +1,8 @@
 @model IEnumerable<Dominio.Entidades.Estoque>
 
-
+@{
+    ViewData["Title"] = "Estoques";
+}
 
 <div class="row">
     <div class="col-md-3">
@@ -57,5 +59,40 @@
 
 @section scripts{
     <script type="text/javascript">
+        // Modal Editar Estoque
+        $(document).ready(function () {
+            $(".btnEditar").click(function () {
+                var id = $(this).data("value");
+                $("#conteudoModal").load("/Estoque/Editar/" + id,
+                    function () {
+                        $('#myModal').modal("show");
+                    }
+                );
+            });
+        });
+
+        // Modal Salvar Estoque
+        $(document).ready(function () {
+            $(".btnNovo").click(function () {
+                var id = $(this).data("value");
+                $("#conteudoModal").load("/Estoque/Salvar/" + id,
+                    function () {
+                        $('#myModal').modal("show");
+                    }
+                );
+            });
+        });
+
+        // Modal Deletar Estoque
+        $(document).ready(function () {
+            $(".btnDeletar").click(function () {
+                var id = $(this).data("value");
+                $("#conteudoModal").load("/Estoque/Deletar/" + id,
+                    function () {
+                        $('#myModal').modal("show");
+                    }
+                );
+            });
+        });
     </script>
 }

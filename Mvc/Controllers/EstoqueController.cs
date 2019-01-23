@@ -51,17 +51,24 @@ namespace Mvc.Controllers
         [HttpPost]
         public async Task<IActionResult> Salvar(Estoque modelo)
         {
-            if (modelo.Id == 0)
+            if (string.IsNullOrEmpty(modelo.Nome))
             {
-                _contexto.Estoques.Add(modelo);
+                return RedirectToAction("Index");
             }
             else
             {
-                var estoque = _contexto.Estoques.First(c => c.Id == modelo.Id);
-                estoque.Nome = modelo.Nome;
+                if (modelo.Id == 0)
+                {
+                    _contexto.Estoques.Add(modelo);
+                }
+                else
+                {
+                    var estoque = _contexto.Estoques.First(c => c.Id == modelo.Id);
+                    estoque.Nome = modelo.Nome;
+                }
+                await _contexto.SaveChangesAsync();
+                return RedirectToAction("Index");
             }
-            await _contexto.SaveChangesAsync();
-            return RedirectToAction("Index");
         }
     }
 }

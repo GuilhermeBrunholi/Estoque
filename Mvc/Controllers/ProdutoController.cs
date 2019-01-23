@@ -28,7 +28,7 @@ namespace Mvc.Controllers
 
         public IActionResult Index(Produto modelo)
         {
-            var id = HttpContext.Session.GetInt32("IdKey");          
+            var id = HttpContext.Session.GetInt32("IdKey");
             var queryDeProduto = _contexto.Produtos
             .Include(p => p.Categoria)
             .Where(p => p.EstoqueId == id || p.EstoqueId == modelo.EstoqueId);
@@ -40,9 +40,9 @@ namespace Mvc.Controllers
         }
 
         public IActionResult Deletar(int id)
-        {   
+        {
             var produto = _contexto.Produtos.First(p => p.Id == id);
-            return PartialView("Deletar",  produto);
+            return PartialView("Deletar", produto);
         }
         public async Task<IActionResult> Excluir(Produto modelo)
         {
@@ -71,23 +71,30 @@ namespace Mvc.Controllers
         [HttpPost]
         public async Task<IActionResult> Salvar(Produto modelo)
         {
-            if (modelo.Id == 0)
+            if (string.IsNullOrEmpty(modelo.Nome))
             {
-                _contexto.Produtos.Add(modelo);
-                modelo.EstoqueId = Convert.ToInt32(HttpContext.Session.GetInt32("IdKey"));
+                return RedirectToAction("Index");
             }
             else
             {
-                var produto = _contexto.Produtos.First(p => p.Id == modelo.Id);
-                produto.Nome = modelo.Nome;
-                produto.CategoriaId = modelo.CategoriaId;
-                produto.Quantidade = modelo.Quantidade;
-                produto.Preco = modelo.Preco;
-                produto.Codigo = modelo.Codigo;
-            }
+                if (modelo.Id == 0)
+                {
+                    _contexto.Produtos.Add(modelo);
+                    modelo.EstoqueId = Convert.ToInt32(HttpContext.Session.GetInt32("IdKey"));
+                }
+                else
+                {
+                    var produto = _contexto.Produtos.First(p => p.Id == modelo.Id);
+                    produto.Nome = modelo.Nome;
+                    produto.CategoriaId = modelo.CategoriaId;
+                    produto.Quantidade = modelo.Quantidade;
+                    produto.Preco = modelo.Preco;
+                    produto.Codigo = modelo.Codigo;
+                }
 
-            await _contexto.SaveChangesAsync();
-            return RedirectToAction("Index", modelo);
+                await _contexto.SaveChangesAsync();
+                return RedirectToAction("Index", modelo);
+            }
         }
     }
 }

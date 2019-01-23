@@ -14,27 +14,27 @@
     <div class="form-group">
         <label class="col-md-4 control-label" for="Name">Nome</label>
         <div class="col-md-8">
-            <input type="text" class="form-control" asp-for="Nome">
+            <input type="text" class="form-control" asp-for="Nome" required>
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-4 control-label" for="Name">Categoria</label>
         <div class="col-md-8">
             <select type="text" class="form-control" asp-for="CategoriaId"
-                asp-items='@(new SelectList(@ViewBag.Categorias, "Id", "Nome"))'>
+                asp-items='@(new SelectList(@ViewBag.Categorias, "Id", "Nome"))' required>
             </select>
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-4 control-label" for="Name">Quantidade</label>
         <div class="col-md-8">
-            <input type="text" class="form-control" asp-for="Quantidade">
+            <input type="text" class="form-control" asp-for="Quantidade" onkeypress="return SomenteNumero(event)">
         </div>
     </div>
     <div class="form-group">
         <label class="col-md-4 control-label" for="Name">Preço</label>
         <div class="col-md-8">
-            <input type="text" class="form-control" asp-for="Preco">
+            <input type="text" class="form-control" asp-for="Preco" id="preco" pattern="[0-9,.]{7,2}" required onKeyPress="return(moeda(this,'.',',',event))">
         </div>
     </div>
     <div class="form-group">

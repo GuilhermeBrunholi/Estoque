@@ -22,14 +22,14 @@ namespace Mvc.Controllers
         }
 
         public IActionResult Deletar(int id)
-        {   
+        {
             var categoria = _contexto.Categorias.First(c => c.Id == id);
             return PartialView("Deletar", categoria);
         }
 
         public async Task<IActionResult> Excluir(Categoria modelo)
         {
-            
+
             _contexto.Categorias.Remove(modelo);
             await _contexto.SaveChangesAsync();
             return RedirectToAction("Index");
@@ -49,17 +49,25 @@ namespace Mvc.Controllers
         [HttpPost]
         public async Task<IActionResult> Salvar(Categoria modelo)
         {
-            if (modelo.Id == 0)
+            if (string.IsNullOrEmpty(modelo.Nome))
             {
-                _contexto.Categorias.Add(modelo);
+                return RedirectToAction("Index");
             }
             else
             {
-                var categoria = _contexto.Categorias.First(c => c.Id == modelo.Id);
-                categoria.Nome = modelo.Nome;
+                if (modelo.Id == 0)
+                {
+                    _contexto.Categorias.Add(modelo);
+                }
+                else
+                {
+                    var categoria = _contexto.Categorias.First(c => c.Id == modelo.Id);
+                    categoria.Nome = modelo.Nome;
+                }
+                await _contexto.SaveChangesAsync();
+                return RedirectToAction("Index");
             }
-            await _contexto.SaveChangesAsync();
-            return RedirectToAction("Index");
+
         }
     }
 }

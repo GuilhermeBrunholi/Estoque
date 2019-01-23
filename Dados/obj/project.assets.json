@@ -3168,11 +3168,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Dados\\Dados.csproj",
+      "projectUniqueName": "C:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Dados\\Dados.csproj",
       "projectName": "Dados",
-      "projectPath": "c:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Dados\\Dados.csproj",
+      "projectPath": "C:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Dados\\Dados.csproj",
       "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Dados\\obj\\",
+      "outputPath": "C:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Dados\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
