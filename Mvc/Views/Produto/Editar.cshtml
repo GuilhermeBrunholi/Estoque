@@ -1,0 +1,52 @@
+@model Dominio.Entidades.Produto
+
+
+<form class="form-horizontal" asp-action="Salvar" asp-controller="Produto" method="POST">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title" id="exampleModalLabel">Editar Produto</h3>
+    </div>
+    <div class="topo">
+        <input type="hidden" class="form-control" asp-for="Id">
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Name">Nome</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" asp-for="Nome" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Name">Categoria</label>
+            <div class="col-md-8">
+                <select type="text" class="form-control" asp-for="CategoriaId"
+                    asp-items='@(new SelectList(@ViewBag.Categorias, "Id", "Nome"))'>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Name">Quantidade</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" asp-for="Quantidade" onkeypress="return SomenteNumero(event)">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Name">Preço</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" asp-for="Preco" 
+                    id="preco" pattern="[0-9,.]{7,2}" required onKeyPress="return(moeda(this,'.',',',event))">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-4 control-label" for="Name">Código</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" asp-for="Codigo">
+            </div>
+        </div>
+    </div>
+
+     <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button class="btn btn-success">Salvar</button>
+    </div>
+
+</form>

@@ -23,10 +23,15 @@ namespace Mvc.Controllers
             return View(estoques);
         }
 
-        public async Task<IActionResult> Deletar(int id)
+        public IActionResult Deletar(int id)
         {
             var estoque = _contexto.Estoques.First(e => e.Id == id);
-            _contexto.Estoques.Remove(estoque);
+            return PartialView("Deletar", estoque);
+        }
+
+        public async Task<IActionResult> Excluir(Estoque modelo)
+        {
+            _contexto.Estoques.Remove(modelo);
             await _contexto.SaveChangesAsync();
             return RedirectToAction("Index");
         }
@@ -34,35 +39,36 @@ namespace Mvc.Controllers
         public IActionResult Editar(int id)
         {
             var estoque = _contexto.Estoques.First(e => e.Id == id);
-            return View("Salvar", estoque);
+            return PartialView("Editar", estoque);
         }
 
         [HttpGet]
         public IActionResult Salvar()
         {
-            return View();
+            return PartialView();
         }
 
         [HttpPost]
         public async Task<IActionResult> Salvar(Estoque modelo)
         {
-            if (modelo.Id == 0)
+            if (string.IsNullOrEmpty(modelo.Nome))
             {
-                _contexto.Estoques.Add(modelo);
+                return RedirectToAction("Index");
             }
             else
             {
-                var estoque = _contexto.Estoques.First(c => c.Id == modelo.Id);
-                estoque.Nome = modelo.Nome;
+                if (modelo.Id == 0)
+                {
+                    _contexto.Estoques.Add(modelo);
+                }
+                else
+                {
+                    var estoque = _contexto.Estoques.First(c => c.Id == modelo.Id);
+                    estoque.Nome = modelo.Nome;
+                }
+                await _contexto.SaveChangesAsync();
+                return RedirectToAction("Index");
             }
-            await _contexto.SaveChangesAsync();
-            return RedirectToAction("Index");
         }
-
-        public IActionResult Estoque(int id)
-        {
-            return View();
-        }
-
     }
 }

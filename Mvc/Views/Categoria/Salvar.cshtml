@@ -1,20 +1,30 @@
 ﻿@model Dominio.Entidades.Categoria
 
-<h2>Formulário de Categoria</h2>
 
 <form class="form-horizontal" asp-action="Salvar" asp-controller="Categoria" method="POST">
 
-    <input type="hidden" class="form-control" asp-for="Id">
-    <div class="form-group">
-        <label class="col-md-1 control-label" for="Name">Nome</label>
-        <div class="col-md-2">
-            <input type="text" class="form-control" asp-for="Nome">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title" id="exampleModalLabel">Criar nova categoria</h3>
+    </div>
+
+    <div class="topo">
+        <input type="hidden" class="form-control" asp-for="Id">
+        <div class="form-group">
+            <label class="col-md-2 control-label" for="Name">Nome</label>
+            <div class="col-md-8">
+                <input type="text" class="form-control" asp-for="Nome" required>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-2">
+            </div>
         </div>
     </div>
-    <div class="form-group">
-        <div class="col-md-2">
-            <button class="btn btn-success">Salvar</button>
-        </div>
+
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button class="btn btn-success">Salvar</button>
     </div>
 
 </form>

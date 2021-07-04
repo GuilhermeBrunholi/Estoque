@@ -1,31 +1,96 @@
 @model IEnumerable<Dominio.Entidades.Categoria>
 
-<h2>Todas Categorias</h2>
-
-<a href="/Categoria/Salvar" class="btn">Nova Categoria</a>
+@{
+    ViewData["Title"] = "Categorias";
+}
 
 <div class="row">
-    <div class="col-md-12">
-        <table class="table table-hover">
-            <thead>
-                <tr>
-                    <th>Nome</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model)
-                {
-                    <tr>
-                        <td>@item.Nome </td>
-                        <td>
-                            <a href="/Categoria/Editar/@item.Id" class="btn">Editar</a>
-                        </td>
-                        <td>
-                            <a href="/Categoria/Deletar/@item.Id" class="btn">Deletar</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+    <div class="col-md-3">
+        <h2>Todas Categorias</h2>
+    </div>
+    <div class="topo">
+        <div class="col-md-7">
+        </div>
+        <div class="col-md-1">
+            <a href="#" type="button" class="btn btn-primary btnSalvarCategoria">Nova Categoria</a>
+        </div>
     </div>
 </div>
+
+<div class="row">
+    <div class="topo">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@item.Nome </td>
+                            <td>
+                                <a href="#" class="btn btnEditarCategoria" data-value="@item.Id">Editar</a>
+                            </td>
+                            <td>
+                                <a href="#" class="btn btnDeletarCategoria" data-value="@item.Id">Deletar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" role="dialog">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <div id="conteudoModal"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+
+        $(document).ready(function () {
+            $(".btnSalvarCategoria").click(function () {
+                var id = $(this).data("value");
+                $("#conteudoModal").load("/Categoria/Salvar/" + id,
+                    function () {
+                        $('#myModal').modal("show");
+                    }
+                );
+            });
+        });
+
+        $(document).ready(function () {
+            $(".btnEditarCategoria").click(function () {
+                var id = $(this).data("value");
+                $("#conteudoModal").load("/Categoria/Editar/" + id,
+                    function () {
+                        $('#myModal').modal("show");
+                    }
+                );
+            });
+        });
+
+        $(document).ready(function () {
+            $(".btnDeletarCategoria").click(function () {
+                var id = $(this).data("value");
+                $("#conteudoModal").load("/Categoria/Deletar/" + id,
+                    function () {
+                        $('#myModal').modal("show");
+                    }
+                );
+            });
+        });
+
+    </script>
+}

@@ -182,11 +182,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Guilherme\\Documents\\Udemy\\NetCore\\Teste\\Cadastro-De-Produtos\\Dominio\\Dominio.csproj",
+      "projectUniqueName": "C:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Dominio\\Dominio.csproj",
       "projectName": "Dominio",
-      "projectPath": "C:\\Users\\Guilherme\\Documents\\Udemy\\NetCore\\Teste\\Cadastro-De-Produtos\\Dominio\\Dominio.csproj",
+      "projectPath": "C:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Dominio\\Dominio.csproj",
       "packagesPath": "C:\\Users\\Guilherme\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Guilherme\\Documents\\Udemy\\NetCore\\Teste\\Cadastro-De-Produtos\\Dominio\\obj\\",
+      "outputPath": "C:\\Users\\Guilherme\\Desktop\\Cadastro-De-Produtos\\Dominio\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

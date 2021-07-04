@@ -1,0 +1,25 @@
+@model Dominio.Entidades.Estoque
+
+
+<form class="form-horizontal" asp-action="Excluir" asp-controller="Estoque" method="POST">
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h3 class="modal-title" id="exampleModalLabel">Deletar Estoque</h3>
+    </div>
+
+    <div class="topo">
+        <input type="hidden" class="form-control" asp-for="Id">
+            Realmente deseja continuar?<br>
+            Ao deletar, todas as informações registradas no estoque serão perdidas,
+            sem possibilidade de restauração.
+    </div>
+    <div class="topo">
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+        <button class="btn btn-success">Confirmar</button>
+    </div>
+
+</form>
